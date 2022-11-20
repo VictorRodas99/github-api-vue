@@ -51,3 +51,21 @@
     background: none;
     color: var(--c-white);
 }
+
+
+/* media queries */
+@media only screen and (max-width: 576px) {
+    .search-container {
+        gap: 2rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .search-container {
+        gap: 1rem;
+    }
+
+    .search-input {
+        overflow: hidden;
+    }
+}

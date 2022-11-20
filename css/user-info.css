@@ -72,3 +72,38 @@
     gap: 1rem;
     align-items: center;
 }
+
+
+/* media queries */
+@media only screen and (max-width: 768px) {
+    .user-container { flex-direction: column }
+
+    .user-img { width: 100% }
+
+    .user-img > img { width: 35% }
+
+    .user-details { width: 100% }
+}
+
+@media only screen and (max-width: 576px) {
+    .user-container { gap: 2rem }
+
+    .details-header { flex-direction: column }
+
+    .body-bio { text-align: center }
+
+    .body-info { font-size: .9rem }
+
+    .body-info > div { text-align: center }
+}
+
+@media only screen and (max-width: 414px) {
+    .user-container {
+        padding: 1rem;
+        gap: 3rem;
+    }
+
+    .user-img > img{
+        width: 40%;
+    }
+}
