@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <script src="https://kit.fontawesome.com/e5067ecc52.js" crossorigin="anonymous"></script>    
+    <!-- ----- -->
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="./css/user-info.css">
+    <!-- --- -->
+
+    <title>Github - Search</title>
+</head>
+<body>
+    <main class="container">
+        <form class="search-container">
+            <span class="search-icon material-symbols-outlined">search</span>
+            <input class="search-input" type="text" placeholder="Search Github username...">
+            <input class="search-button" type="submit" value="Search">
+        </form>
+
+        <div class="user-container">
+            <div class="user-img">
+                <img src="./imgs/user-profile.png" alt="user-profile">
+            </div>
+            <div class="user-details">
+                <div class="details-header">
+                    <h1>Username</h1>
+                    <p>Joined 25 Jan 2012</p>
+                </div>
+
+                <div class="details-body">
+                    <p class="body-bio unavailable">This profile has no bio</p>
+
+                    <div class="body-info">
+
+                        <div class="info-repos">
+                            <p>Repos</p>
+                            <h1>8</h1>
+                        </div>
+
+                        <div class="info-followers">
+                            <p>Followers</p>
+                            <h1>4500</h1>
+                        </div>
+
+                        <div class="info-following">
+                            <p>Following</p>
+                            <h1>9</h1>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="details-footer">
+
+                    <div class="footer-item location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <p>San Francisco</p>
+                    </div>
+
+                    <div class="footer-item twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                        <p class="unavailable">Not Available</p>
+                    </div>
+
+                    <div class="footer-item github-home">
+                        <i class="fa-solid fa-link"></i>
+                        <a href="#">See profile in github</a>
+                    </div>
+
+                    <div class="footer-item nickname">
+                        <i class="fa-solid fa-user"></i>
+                        <p>Username</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

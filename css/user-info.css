@@ -1,0 +1,74 @@
+@import './base.css';
+
+
+.user-container {
+    background: var(--c-dark-soft);
+    padding: 4rem;
+    display: flex;
+    gap: 4rem;
+    border-radius: var(--radius-px);
+}
+
+.user-img {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-img > img {
+    width: 60%;
+    border-radius: 50%;
+}
+
+.user-details {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+/* header */
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* body */
+.details-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.body-bio {
+    font-style: italic;
+}
+
+.body-info {
+    display: flex;
+    justify-content: space-between;
+    background: var(--c-dark-darker);
+    border-radius: var(--radius-px);
+    padding: 2rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+}
+
+
+/* footer */
+.details-footer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: .7rem;
+}
+
+.footer-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}

@@ -1,0 +1,53 @@
+@import './base.css';
+
+.search-container {
+    background: var(--color-background-soft);
+    padding: 1rem;
+    border-radius: var(--radius-px);
+
+    display: flex;
+    gap: 4rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-icon {
+    font-weight: bold;
+    color: var(--c-blue);
+    flex-grow: 1;
+}
+
+.search-input {
+    font-size: 1rem;
+    color: var(--c-white);
+    background: none;
+    border: none;
+    flex-grow: 10;   
+}
+
+
+.search-button {
+    flex-grow: 1;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: .4rem;
+    border: 1px solid var(--c-blue);
+    background: var(--c-blue);
+    color: var(--c-white-soft);
+    font-weight: bold;
+
+    transition: all .3s ease;
+}
+
+
+/* events */
+.search-input:focus {
+    border: none;
+    outline: none;
+}
+
+.search-button:hover {
+    background: none;
+    color: var(--c-white);
+}
