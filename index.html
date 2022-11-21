@@ -16,44 +16,51 @@
     <link rel="stylesheet" href="./css/user-info.css">
     <!-- --- -->
 
+    <!-- javascript -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="./js/app.js" defer></script>
+    <script src="./js/api.js" defer></script>
+    <!-- ---------- -->
+
     <title>Github - Search</title>
 </head>
 <body>
-    <main class="container">
-        <form class="search-container">
+    <main id="app" class="container">
+        <form class="search-container" @submit.prevent="getData">
             <span class="search-icon material-symbols-outlined">search</span>
-            <input class="search-input" type="text" placeholder="Search Github username...">
+            <input class="search-input" type="text" required placeholder="Search Github username..." v-model="user">
             <input class="search-button" type="submit" value="Search">
         </form>
 
-        <div class="user-container">
+        <div class="user-container" v-if="Object.entries(userData).length">
             <div class="user-img">
-                <img src="./imgs/user-profile.png" alt="user-profile">
+                <img :src="userData.avatar_url" alt="user-profile">
             </div>
             <div class="user-details">
                 <div class="details-header">
-                    <h1>Username</h1>
-                    <p>Joined 25 Jan 2012</p>
+                    <h1>{{ userData.name }}</h1>
+                    <p>Joined {{ userData.date }}</p>
                 </div>
 
                 <div class="details-body">
-                    <p class="body-bio unavailable">This profile has no bio</p>
+                    <p v-if="!userData.bio" class="body-bio" :class="{ unavailable: !userData.bio }">This profile has no bio</p>
+                    <p v-else class="body-bio">{{ userData.bio }}</p>
 
                     <div class="body-info">
 
                         <div class="info-repos">
                             <p>Repos</p>
-                            <h1>8</h1>
+                            <h1>{{ userData.public_repos }}</h1>
                         </div>
 
                         <div class="info-followers">
                             <p>Followers</p>
-                            <h1>4500</h1>
+                            <h1>{{ userData.followers }}</h1>
                         </div>
 
                         <div class="info-following">
                             <p>Following</p>
-                            <h1>9</h1>
+                            <h1>{{ userData.following }}</h1>
                         </div>
 
                     </div>
@@ -63,22 +70,24 @@
 
                     <div class="footer-item location">
                         <span class="material-symbols-outlined">location_on</span>
-                        <p>San Francisco</p>
+                        <p v-if="!userData.location" :class="{ unavailable: !userData.location }">Not Available</p>
+                        <p v-else>{{ userData.location }}</p>
                     </div>
 
                     <div class="footer-item twitter">
                         <i class="fa-brands fa-twitter"></i>
-                        <p class="unavailable">Not Available</p>
+                        <p v-if="!userData.twitter_username" :class="{ unavailable: !userData.twitter_username }">Not Available</p>
+                        <p v-else>{{ userData.twitter_username }}</p>
                     </div>
 
                     <div class="footer-item github-home">
                         <i class="fa-solid fa-link"></i>
-                        <a href="#">See profile in github</a>
+                        <a :href="userData.html_url">See profile in github</a>
                     </div>
 
                     <div class="footer-item nickname">
                         <i class="fa-solid fa-user"></i>
-                        <p>Username</p>
+                        <p>{{ userData.login }}</p>
                     </div>
 
                 </div>
